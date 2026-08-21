@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:learnova/grade_Selection_Screen.dart';
 
-void main() {
-  runApp(Center(
-    child: SizedBox(
-      width: 300,
-      height: 672,
-      child: MyApp()),
+void main(){
+  runApp(Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Center(
+      child: SizedBox(
+        width: 330,
+        height: 672,
+        child: const MyApp()),
+    ),
   ));
 }
 
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-              backgroundColor: Color(0xff0000ff),
+              backgroundColor: Color(0xff2563EB),
               toolbarHeight: 50,
               actions: [
                 Icon(Icons.person,
@@ -29,9 +33,11 @@ class MyApp extends StatelessWidget {
               ],
               
 
-        )
-       ,
+        ),
+
+        body: GradeSelectionScreen(),
       ),
     );
   }
 }
+
