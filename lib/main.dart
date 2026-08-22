@@ -20,24 +20,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-              backgroundColor: Color(0xff2563EB),
-              toolbarHeight: 50,
-              actions: [
-                Icon(Icons.person,
-                color: Color(0xffffffff),
-                size: 40,
-                
-                )
-              ],
-              
-
-        ),
-
-        body: GradeSelectionScreen(),
-      ),
-    );
+      home: GradeSelectionScreen(),
+      );
+    
   }
 }
 
