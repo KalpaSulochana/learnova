@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:learnova/alSubjectSelection.dart';
 import 'package:learnova/colors.dart';
 
 class GradeSelectionScreen extends StatefulWidget {
@@ -9,8 +12,6 @@ class GradeSelectionScreen extends StatefulWidget {
 }
 
 class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +21,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
         elevation: 100,
         title: Text(
           "Select Grade",
-          style: TextStyle(
-            color: primaryBlue,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: primaryBlue, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -34,14 +32,12 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // --- SENIOR SECONDARY ---
-              _buildSectionHeader(
-                "Senior Secondary",
-                "O/L & A/L Preparation",
-              ),
+              _buildSectionHeader("Senior Secondary", "O/L & A/L Preparation"),
               _buildSpecialCard(
                 title: "Advanced Level",
                 subtitle: "Syllabus, Notes, Papers, etc...",
                 icon: Icons.school,
+                toPage: alStreamSelectionScreen(),
               ),
               const SizedBox(height: 15),
               Row(
@@ -83,7 +79,9 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
               _buildSpecialCard(
                 title: "Grade 5 Scholarship",
                 subtitle: "Syllabus, Notes, Papers, etc...",
-                icon: Icons.emoji_events, // Changed icon to represent scholarship
+                icon:
+                    Icons.emoji_events, // Changed icon to represent scholarship
+                toPage: alStreamSelectionScreen(),
               ),
               const SizedBox(height: 15),
               Row(
@@ -143,80 +141,81 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
     required String title,
     required String subtitle,
     required IconData icon,
+    required Widget toPage,
   }) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: cardWhite,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: primaryBlue.withOpacity(0.08),
-            blurRadius: 15,
-            offset: const Offset(0, 5),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => toPage),
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: cardWhite,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: primaryBlue.withOpacity(0.08),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
+            ),
+          ],
+          border: Border.all(
+            color: accentGold.withOpacity(0.3), // Subtle gold border
+            width: 1,
           ),
-        ],
-        border: Border.all(
-          color: accentGold.withOpacity(0.3), // Subtle gold border
-          width: 1,
         ),
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [accentGold, Color(0xFFFFB020)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [accentGold, Color(0xFFFFB020)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: accentGold.withOpacity(0.4),
+                    blurRadius: 8,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
               ),
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: accentGold.withOpacity(0.4),
-                  blurRadius: 8,
-                  offset: const Offset(0, 3),
-                ),
-              ],
+              child: Icon(icon, color: Colors.white, size: 28),
             ),
-            child: Icon(
-              icon,
-              color: Colors.white,
-              size: 28,
-            ),
-          ),
-          const SizedBox(width: 20),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: primaryBlue,
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: primaryBlue,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    color: textLight,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
+                  const SizedBox(height: 6),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      color: textLight,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Icon(
-            Icons.arrow_forward_ios_rounded,
-            color: primaryBlue,
-            size: 20,
-          ),
-        ],
+            Icon(Icons.arrow_forward_ios_rounded, color: primaryBlue, size: 20),
+          ],
+        ),
       ),
     );
   }
