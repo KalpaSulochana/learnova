@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:learnova/alSubjectSelection.dart';
+import 'package:learnova/alStreamSelection.dart';
 import 'package:learnova/colors.dart';
 
 class GradeSelectionScreen extends StatefulWidget {
@@ -27,12 +27,12 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // --- SENIOR SECONDARY ---
-              _buildSectionHeader("Senior Secondary", "O/L & A/L Preparation"),
+              //_buildSectionHeader("Senior Secondary", "O/L & A/L Preparation"),
               _buildSpecialCard(
                 title: "Advanced Level",
                 subtitle: "Syllabus, Notes, Papers, etc...",
@@ -47,13 +47,13 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
                   Expanded(child: _buildGradeCard("11", "Grade 11")),
                 ],
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 15),
 
               // --- SECONDARY EDUCATION ---
-              _buildSectionHeader(
+              /*_buildSectionHeader(
                 "Secondary Education",
                 "Middle school (Grade 6 - 9)",
-              ),
+              ),*/
               Row(
                 children: [
                   Expanded(child: _buildGradeCard("9", "Grade 9")),
@@ -69,18 +69,17 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
                   Expanded(child: _buildGradeCard("6", "Grade 6")),
                 ],
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 15),
 
               // --- PRIMARY EDUCATION ---
-              _buildSectionHeader(
+              /*_buildSectionHeader(
                 "Primary Education",
                 "Foundation years (Grade 1 - 5)",
-              ),
+              ),*/
               _buildSpecialCard(
                 title: "Grade 5 Scholarship",
                 subtitle: "Syllabus, Notes, Papers, etc...",
-                icon:
-                    Icons.emoji_events, // Changed icon to represent scholarship
+                icon:Icons.emoji_events, // Changed icon to represent scholarship
                 toPage: alStreamSelectionScreen(),
               ),
               const SizedBox(height: 15),
@@ -221,11 +220,11 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
   }
 
   // Helper method for Individual Grade Grid Cards
-  Widget _buildGradeCard(String number, String title) {
+  Widget _buildGradeCard(String number, String title, ) {
     return GestureDetector(
-      // onTap: () => setState(...),
+       onTap: () {},
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 12),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         decoration: BoxDecoration(
           color: cardWhite,
           borderRadius: BorderRadius.circular(20),
@@ -237,35 +236,40 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
             ),
           ],
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: Row(
+          
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              decoration: BoxDecoration(
-                color: primaryBlue,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: primaryBlue.withOpacity(0.3),
-                    blurRadius: 6,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Text(
-                number,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            SizedBox(width: 25,),
+            Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
+                Container(
+                  height: 40,
+                  width: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: primaryBlue,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: primaryBlue.withOpacity(0.3),
+                        blurRadius: 6,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      number,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
                 Text(
                   title,
                   style: TextStyle(
@@ -274,17 +278,21 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
                     color: textDark,
                   ),
                 ),
-                const SizedBox(width: 6),
-                Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: accentGold,
-                  size: 14,
-                ),
+                
+               
               ],
             ),
+      
+            SizedBox(width: 20,),
+             Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: primaryBlue,
+                  size: 16,
+                ),
           ],
         ),
       ),
     );
   }
 }
+
