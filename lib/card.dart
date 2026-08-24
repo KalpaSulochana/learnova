@@ -1,31 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:learnova/colors.dart';
 
-Widget buildCommonCard(IconData icon, String title, String subtitle) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10,),
-      child: Container(
+Widget buildCommonCard(
+  BuildContext context,
+  IconData icon,
+  String title,
+  String subtitle,
+  Widget toPage,
+) {
+  return Padding(
+    padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+    child: Container(
         //margin: const EdgeInsets.only(bottom: 5),
         decoration: BoxDecoration(
           boxShadow: [
-              BoxShadow(
-                color: primaryBlue.withOpacity(0.08),
-                blurRadius: 15,
-                offset: const Offset(0, 5),
-              ),
-            ],
+            BoxShadow(
+              color: primaryBlue.withValues(alpha: 0.08),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
+            ),
+          ],
           color: cardWhite, // Dark card background
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.white.withOpacity(0.05)),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
         ),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
             borderRadius: BorderRadius.circular(20),
-            
+
             onTap: () {
-              // Handle card tap
-            },
+        Navigator.push(context, MaterialPageRoute(builder: (context) => toPage),);
+          },
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Row(
@@ -39,16 +45,16 @@ Widget buildCommonCard(IconData icon, String title, String subtitle) {
                       borderRadius: BorderRadius.circular(14),
                     ),
                     alignment: Alignment.center,
-                    child: Icon(icon , size: 40, color: cardWhite,),
-                    
+                    child: Icon(icon, size: 40, color: cardWhite),
+
                     /*Text(
-                      letter,
-                      style: const TextStyle(
-                        color: Color(0xFF1E88E5), // Blue text for letter
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),*/
+                          letter,
+                          style: const TextStyle(
+                            color: Color(0xFF1E88E5), // Blue text for letter
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),*/
                   ),
                   const SizedBox(width: 10),
                   // Texts
@@ -58,7 +64,7 @@ Widget buildCommonCard(IconData icon, String title, String subtitle) {
                       children: [
                         Text(
                           title,
-                          style:  TextStyle(
+                          style: TextStyle(
                             color: textDark,
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
@@ -67,7 +73,7 @@ Widget buildCommonCard(IconData icon, String title, String subtitle) {
                         const SizedBox(height: 4),
                         Text(
                           subtitle,
-                          style:  TextStyle(
+                          style: TextStyle(
                             color: textLight, // Subtle grey text
                             fontSize: 14,
                           ),
@@ -76,17 +82,13 @@ Widget buildCommonCard(IconData icon, String title, String subtitle) {
                     ),
                   ),
                   // Chevron icon
-                   Icon(
-                    Icons.chevron_right,
-                    color: primaryBlue,
-                    size: 28,
-                  ),
+                  Icon(Icons.chevron_right, color: primaryBlue, size: 28),
                 ],
               ),
             ),
           ),
         ),
       ),
-    );
-  }
 
+  );
+}
