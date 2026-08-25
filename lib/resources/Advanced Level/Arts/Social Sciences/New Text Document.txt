@@ -1,0 +1,7 @@
+logic,
+geography,
+politics,
+media,
+history,
+econ,
+
