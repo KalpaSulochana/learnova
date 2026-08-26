@@ -12,12 +12,13 @@ class combinedMaths extends StatelessWidget {
       initialIndex: 0, // Opens "Past Papers" by default
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: bgColor,
           elevation: 100,
           title: Text(
             "Select Stream",
             style: TextStyle(
-              color: Colors.white,
+              color: cardWhite,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
@@ -111,10 +112,18 @@ class combinedMaths extends StatelessWidget {
                         style: TextStyle(color: textDark, fontSize: 16),
                       ),
                     ),
-                    Center(
-                      child: Text(
-                        'Marking Schemes Content',
-                        style: TextStyle(color: textDark, fontSize: 16),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10,),
+                          buildCommonCard(context, Icons.assignment, "2025 A/L", "full past paper", combinedMaths()),
+                          buildCommonCard(context, Icons.list_alt, "2024 A/L", "full past paper", combinedMaths()),
+                          buildCommonCard(context, Icons.polymer, "2023 A/L", "full past paper", combinedMaths()),
+                          buildCommonCard(context, Icons.warning, "2022 A/L", "full past paper", combinedMaths()),
+                          buildCommonCard(context, Icons.quiz, "2021 A/L", "full past paper", combinedMaths()),
+                          buildCommonCard(context, Icons.quiz, "2020 A/L", "full past paper", combinedMaths()),
+                          buildCommonCard(context, Icons.quiz, "2019 A/L", "full past paper", combinedMaths()),
+                        ],
                       ),
                     ),
                   ],
