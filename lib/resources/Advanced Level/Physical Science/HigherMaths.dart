@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
+import 'package:learnova/resources/Advanced%20Level/Physical%20Science/CombinedMaths.dart';
 
 class higherMaths extends StatelessWidget {
   const higherMaths({super.key});
@@ -37,7 +38,7 @@ class higherMaths extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:  [
                     Text(
-                      'A/L Combined Maths',
+                      'A/L Higher Maths',
                       style: TextStyle(
                         color: textDark
                         ,

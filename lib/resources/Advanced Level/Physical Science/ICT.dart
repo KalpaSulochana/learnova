@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
+import 'package:learnova/resources/Advanced%20Level/Physical%20Science/CombinedMaths.dart';
 
 class ict extends StatelessWidget {
   const ict({super.key});
@@ -37,7 +38,7 @@ class ict extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:  [
                     Text(
-                      'A/L Combined Maths',
+                      'A/L ICT',
                       style: TextStyle(
                         color: textDark
                         ,
