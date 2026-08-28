@@ -8,11 +8,8 @@ class AlmathssubjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-    
-      home: Scaffold(
-        appBar: AppBar(
+    return Scaffold(
+      appBar: AppBar(
         backgroundColor: bgColor,
         elevation: 100,
         title: Text(
@@ -21,18 +18,37 @@ class AlmathssubjectScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-        body: SingleChildScrollView(
-          child:Column(
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            SizedBox(height: 10,),
-            buildCommonCard(context, Icons.functions, "Combined Maths", "Past Papers, Marking Schemes", combinedMaths()),
-            buildCommonCard(context, Icons.functions, "Physics", "Past Papers, Marking Schemes", combinedMaths()),
-            buildCommonCard(context, Icons.functions, "Chemistry", "Past Papers, Marking Schemes", combinedMaths()),
-            buildCommonCard(context, Icons.functions, "ICT", "Past Papers, Marking Schemes", combinedMaths()),
+            SizedBox(height: 10),
+            buildCommonCard(
+              icon: Icons.functions,
+              title: "Combined Maths",
+              subtitle: "all resources",
+              toPage: combinedMaths(),
+            ),
+            buildCommonCard(
+              icon: Icons.functions,
+              title: "Combined Maths",
+              subtitle: "all resources",
+              toPage: combinedMaths(),
+            ),
+            buildCommonCard(
+              icon: Icons.functions,
+              title: "Combined Maths",
+              subtitle: "all resources",
+              toPage: combinedMaths(),
+            ),
+            buildCommonCard(
+              icon: Icons.functions,
+              title: "Combined Maths",
+              subtitle: "all resources",
+              toPage: combinedMaths(),
+            ),
           ],
         ),
       ),
-    ),
     );
   }
 }

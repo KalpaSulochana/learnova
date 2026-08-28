@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnova/grade_Selection_Screen.dart';
+import 'package:learnova/gradeSelectionScreen.dart';
 
 void main(){
-  runApp(Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Center(
-      child: SizedBox(
-        width: 330,
-        height: 672,
-        child: const MyApp()),
-    ),
-  ));
+  runApp(const MyApp(),);
 }
 
 class MyApp extends StatelessWidget {

@@ -8,9 +8,7 @@ class alStreamSelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: bgColor,
         appBar: AppBar(
           backgroundColor: bgColor,
@@ -28,17 +26,11 @@ class alStreamSelectionScreen extends StatelessWidget {
           child: Column(children: [
             
             SizedBox(height: 10,),
-            buildCommonCard(context, Icons.functions,"Physical Science","Combined Maths, Physics, Chemistry", AlmathssubjectScreen(),),
-            buildCommonCard(context, Icons.science ,"Biological Science","Biology, Physics, Chemistry",AlmathssubjectScreen(),),
-            buildCommonCard(context, Icons.calculate ,"Commerce","Accounting, BS, Economics",AlmathssubjectScreen(),),
-            buildCommonCard(context, Icons.brush ,"Arts & Humanities","Languages, Social Sciences, Aesthetics",AlmathssubjectScreen(),),
-            buildCommonCard(context, Icons.engineering ,"Engineering Technology","ET, SFT, ICT",AlmathssubjectScreen(),),
-            buildCommonCard(context, Icons.biotech ,"Biosystem Technology","BST, SFT, Agriculture",AlmathssubjectScreen(),),
+            buildCommonCard(icon: Icons.functions, title: "Maths", subtitle: "subtitle", toPage: AlmathssubjectScreen(),)
             
             ],
             ),
         ),
-      ),
-    );
+      );
   }
 }

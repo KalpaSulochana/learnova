@@ -107,7 +107,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
   }
 
   // Helper method for Section Headers
-  Widget _buildSectionHeader(String title, String subtitle) {
+  /*Widget _buildSectionHeader(String title, String subtitle) {
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -134,7 +134,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
       ),
     );
   }
-
+*/
   // Helper method for Special Full-Width Cards (A/L & Grade 5)
   Widget _buildSpecialCard({
     required String title,

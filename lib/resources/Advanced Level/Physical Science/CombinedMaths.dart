@@ -96,13 +96,7 @@ class combinedMaths extends StatelessWidget {
                       child: Column(
                         children: [
                           SizedBox(height: 10,),
-                          buildCommonCard(context, Icons.assignment, "2025 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.list_alt, "2024 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.polymer, "2023 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.warning, "2022 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.quiz, "2021 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.quiz, "2020 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.quiz, "2019 A/L", "full past paper", combinedMaths()),
+                          buildCommonCard(icon: Icons.functions, title: "2025", subtitle: "al paper", url: "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",)
                         ],
                       ),
                     ),
@@ -116,13 +110,7 @@ class combinedMaths extends StatelessWidget {
                       child: Column(
                         children: [
                           SizedBox(height: 10,),
-                          buildCommonCard(context, Icons.assignment, "2025 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.list_alt, "2024 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.polymer, "2023 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.warning, "2022 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.quiz, "2021 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.quiz, "2020 A/L", "full past paper", combinedMaths()),
-                          buildCommonCard(context, Icons.quiz, "2019 A/L", "full past paper", combinedMaths()),
+                          
                         ],
                       ),
                     ),
