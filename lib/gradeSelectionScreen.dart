@@ -15,16 +15,89 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Action when tapped
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Action button pressed')),
+          );
+        },
+        backgroundColor: primaryBlue,
+        foregroundColor: Colors.white,
+        elevation: 4.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        tooltip: 'New Chat',
+        child: const Icon(Icons.chat),
+      ),
+    
       backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: bgColor,
-        elevation: 100,
-        title: Text(
-          "Select Grade",
-          style: TextStyle(color: primaryBlue, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
+          title: const Text('Learnova'),
+          backgroundColor: primaryBlue,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+
+          // 1. Interactive Leading Button
+          leading: IconButton(
+            icon: const Icon(Icons.menu),
+            tooltip: 'Menu',
+            onPressed: () {
+              // Action on tap
+            },
+          ),
+
+          // 2. Interactive Action Buttons & Dropdown Menu
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: () {
+                // Action on tap
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.favorite_border),
+              tooltip: 'Favorite',
+              onPressed: () {
+                // Action on tap
+              },
+            ),
+            // Built-in interactive popup menu (no state code needed)
+            PopupMenuButton<String>(
+              color: Colors.grey,
+
+              icon: const Icon(Icons.more_vert),
+              tooltip: 'More Options',
+              onSelected: (value) {
+                // Action on selection
+              },
+              itemBuilder: (BuildContext context) => [
+                 PopupMenuItem(
+                  value: 'settings',
+                  child: Text('Settings', style: TextStyle(
+                    fontSize: 15,
+                    color: textDark,
+                  ),),
+                ),
+                 PopupMenuItem(
+                  value: 'share',
+                  child: Text('Share', style: TextStyle(
+                    fontSize: 15,
+                    color: textDark,
+                  ),),
+                ),
+                PopupMenuItem(
+                  value: 'logout',
+                  child: Text('Logout', style: TextStyle(
+                    fontSize: 15,
+                    color: textDark,
+                  ),),
+                ),
+              ],
+            ),
+          ],),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),

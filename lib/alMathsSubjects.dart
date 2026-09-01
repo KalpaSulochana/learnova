@@ -10,7 +10,7 @@ class AlmathssubjectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: bgColor,
+        backgroundColor: primaryBlue,
         elevation: 100,
         title: Text(
           "Select subject",
@@ -30,19 +30,19 @@ class AlmathssubjectScreen extends StatelessWidget {
             ),
             buildCommonCard(
               icon: Icons.functions,
-              title: "Combined Maths",
+              title: "Physics",
               subtitle: "all resources",
               toPage: combinedMaths(),
             ),
             buildCommonCard(
               icon: Icons.functions,
-              title: "Combined Maths",
+              title: "Chemistry",
               subtitle: "all resources",
               toPage: combinedMaths(),
             ),
             buildCommonCard(
               icon: Icons.functions,
-              title: "Combined Maths",
+              title: "ICT",
               subtitle: "all resources",
               toPage: combinedMaths(),
             ),
