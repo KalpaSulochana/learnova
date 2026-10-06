@@ -9,7 +9,9 @@ class AlmathssubjectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: primaryBlue,
         elevation: 100,
         title: Text(
@@ -26,25 +28,25 @@ class AlmathssubjectScreen extends StatelessWidget {
               icon: Icons.functions,
               title: "Combined Maths",
               subtitle: "all resources",
-              toPage: combinedMaths(),
+              toPage: AlCombinedMaths(),
             ),
             buildCommonCard(
               icon: Icons.functions,
               title: "Physics",
               subtitle: "all resources",
-              toPage: combinedMaths(),
+              toPage: AlCombinedMaths(),
             ),
             buildCommonCard(
               icon: Icons.functions,
               title: "Chemistry",
               subtitle: "all resources",
-              toPage: combinedMaths(),
+              toPage: AlCombinedMaths(),
             ),
             buildCommonCard(
               icon: Icons.functions,
               title: "ICT",
               subtitle: "all resources",
-              toPage: combinedMaths(),
+              toPage: AlCombinedMaths(),
             ),
           ],
         ),

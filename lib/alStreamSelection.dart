@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnova/alMathsSubjects.dart';
+import 'package:learnova/resources/Advanced%20Level/alMathsSubjects.dart';
 import 'package:learnova/colors.dart';
 import 'package:learnova/card.dart';
 
@@ -11,7 +11,8 @@ class alStreamSelectionScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: bgColor,
         appBar: AppBar(
-          backgroundColor: bgColor,
+          automaticallyImplyLeading: false,
+          backgroundColor: primaryBlue,
           elevation: 100,
           title: Text(
             "Select Stream",

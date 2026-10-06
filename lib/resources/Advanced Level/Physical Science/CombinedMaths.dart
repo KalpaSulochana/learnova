@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
 
-class combinedMaths extends StatelessWidget {
-  const combinedMaths({super.key});
+class AlCombinedMaths extends StatelessWidget {
+  const AlCombinedMaths({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +11,10 @@ class combinedMaths extends StatelessWidget {
       length: 3,
       initialIndex: 0, // Opens "Past Papers" by default
       child: Scaffold(
+        backgroundColor: bgColor,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: bgColor,
+          backgroundColor: primaryBlue,
           elevation: 100,
           title: Text(
             "Select Stream",
@@ -28,26 +29,24 @@ class combinedMaths extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10,),
-              
+              SizedBox(height: 10),
+
               // Unit Titles
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children:  [
+                  children: [
                     Text(
                       'A/L Combined Maths',
                       style: TextStyle(
-                        color: textDark
-                        ,
+                        color: textDark,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         height: 1.2,
                       ),
                     ),
-                   
-                    
+
                     Text(
                       'All resources',
                       style: TextStyle(
@@ -59,9 +58,9 @@ class combinedMaths extends StatelessWidget {
                   ],
                 ),
               ),
-        
+
               const SizedBox(height: 5),
-        
+
               // Tab Bar
               TabBar(
                 isScrollable: true,
@@ -86,17 +85,58 @@ class combinedMaths extends StatelessWidget {
                   Tab(text: 'Marking Schemes'),
                 ],
               ),
-        
+
               // Tab Views
-               Expanded(
+              Expanded(
                 child: TabBarView(
                   children: [
-                    
                     SingleChildScrollView(
                       child: Column(
                         children: [
-                          SizedBox(height: 10,),
-                          buildCommonCard(icon: Icons.functions, title: "2025", subtitle: "al paper", url: "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",)
+                          SizedBox(height: 10),
+                          buildCommonCard(
+                            icon: Icons.functions,
+                            title: "2025 AL",
+                            subtitle: "full paper",
+                            url:
+                                "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                          ),
+                          buildCommonCard(
+                            icon: Icons.functions,
+                            title: "2025 AL",
+                            subtitle: "full paper",
+                            url:
+                                "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                          ),
+                          buildCommonCard(
+                            icon: Icons.functions,
+                            title: "2025 AL",
+                            subtitle: "full paper",
+                            url:
+                                "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                          ),
+                          buildCommonCard(
+                            icon: Icons.functions,
+                            title: "2025 AL",
+                            subtitle: "full paper",
+                            url:
+                                "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                          ),
+                          buildCommonCard(
+                            icon: Icons.functions,
+                            title: "2025 AL",
+                            subtitle: "full paper",
+                            url:
+                                "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                          ),
+                          buildCommonCard(
+                            icon: Icons.functions,
+                            title: "2025 AL",
+                            subtitle: "full paper",
+                            url:
+                                "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                          ),
+                          
                         ],
                       ),
                     ),
@@ -107,12 +147,7 @@ class combinedMaths extends StatelessWidget {
                       ),
                     ),
                     SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 10,),
-                          
-                        ],
-                      ),
+                      child: Column(children: [SizedBox(height: 10)]),
                     ),
                   ],
                 ),

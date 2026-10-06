@@ -21,7 +21,7 @@ class buildCommonCard extends StatelessWidget {
          'Either toPage or url must be provided',
        );
 
-  Future<void> _handleTap(BuildContext context) async {
+  Future<void>  _handleTap(BuildContext context) async {
     if (url != null) {
       String cleanUrl = url!.trim();
       if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://')) {

@@ -115,9 +115,9 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
               const SizedBox(height: 15),
               Row(
                 children: [
-                  Expanded(child: _buildGradeCard("10", "Grade 10")),
+                  Expanded(child: _buildGradeCard(number: "10",title:  "Grade 10")),
                   const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard("11", "Grade 11")),
+                  Expanded(child: _buildGradeCard(number: "11",title:  "Grade 11")),
                 ],
               ),
               const SizedBox(height: 15),
@@ -129,17 +129,17 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
               ),*/
               Row(
                 children: [
-                  Expanded(child: _buildGradeCard("9", "Grade 9")),
+                  Expanded(child: _buildGradeCard(number: "9", title: "Grade 9")),
                   const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard("8", "Grade 8")),
+                  Expanded(child: _buildGradeCard(number: "8", title: "Grade 8")),
                 ],
               ),
               const SizedBox(height: 15),
               Row(
                 children: [
-                  Expanded(child: _buildGradeCard("7", "Grade 7")),
+                  Expanded(child: _buildGradeCard(number: "7",title:  "Grade 7")),
                   const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard("6", "Grade 6")),
+                  Expanded(child: _buildGradeCard(number: "6", title: "Grade 6")),
                 ],
               ),
               const SizedBox(height: 15),
@@ -158,17 +158,17 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
               const SizedBox(height: 15),
               Row(
                 children: [
-                  Expanded(child: _buildGradeCard("4", "Grade 4")),
+                  Expanded(child: _buildGradeCard(number: "4", title: "Grade 4")),
                   const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard("3", "Grade 3")),
+                  Expanded(child: _buildGradeCard(number: "3", title: "Grade 3")),
                 ],
               ),
               const SizedBox(height: 15),
               Row(
                 children: [
-                  Expanded(child: _buildGradeCard("2", "Grade 2")),
+                  Expanded(child: _buildGradeCard(number: "2", title: "Grade 2")),
                   const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard("1", "Grade 1")),
+                  Expanded(child: _buildGradeCard(number: "1", title: "Grade 1")),
                 ],
               ),
               const SizedBox(height: 40),
@@ -215,7 +215,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
     required IconData icon,
     required Widget toPage,
   }) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         Navigator.push(
           context,
@@ -293,8 +293,8 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
   }
 
   // Helper method for Individual Grade Grid Cards
-  Widget _buildGradeCard(String number, String title, ) {
-    return GestureDetector(
+  Widget _buildGradeCard({required String number,required String title,  String ? toPage}) {
+    return InkWell(
        onTap: () {},
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
