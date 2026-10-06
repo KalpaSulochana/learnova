@@ -57,16 +57,10 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
                 // Action on tap
               },
             ),
-            IconButton(
-              icon: const Icon(Icons.favorite_border),
-              tooltip: 'Favorite',
-              onPressed: () {
-                // Action on tap
-              },
-            ),
+            
             // Built-in interactive popup menu (no state code needed)
             PopupMenuButton<String>(
-              color: Colors.grey,
+              color: primaryBlue,
 
               icon: const Icon(Icons.more_vert),
               tooltip: 'More Options',
@@ -357,7 +351,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
             ),
       
             SizedBox(width: 20,),
-             Icon(
+            Icon(
                   Icons.arrow_forward_ios_rounded,
                   color: primaryBlue,
                   size: 16,
