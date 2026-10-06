@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
+import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Chemistry.dart';
+import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Physics.dart';
 import 'package:learnova/resources/Advanced%20Level/Physical%20Science/CombinedMaths.dart';
+import 'package:learnova/resources/Advanced%20Level/Physical%20Science/HigherMaths.dart';
+import 'package:learnova/resources/Advanced%20Level/Physical%20Science/ICT.dart';
 
 class AlmathssubjectScreen extends StatelessWidget {
   const AlmathssubjectScreen({super.key});
@@ -34,19 +38,25 @@ class AlmathssubjectScreen extends StatelessWidget {
               icon: Icons.functions,
               title: "Physics",
               subtitle: "all resources",
-              toPage: AlCombinedMaths(),
+              toPage: AlPhysics(),
             ),
             buildCommonCard(
               icon: Icons.functions,
               title: "Chemistry",
               subtitle: "all resources",
-              toPage: AlCombinedMaths(),
+              toPage: AlChemistry(),
             ),
             buildCommonCard(
               icon: Icons.functions,
               title: "ICT",
               subtitle: "all resources",
-              toPage: AlCombinedMaths(),
+              toPage: AlICT(),
+            ),
+            buildCommonCard(
+              icon: Icons.functions,
+              title: "Higher Maths",
+              subtitle: "all resources",
+              toPage: AlHigherMaths(),
             ),
           ],
         ),

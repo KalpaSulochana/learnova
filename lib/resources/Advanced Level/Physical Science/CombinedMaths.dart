@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
+import 'package:learnova/pdfViewer.dart';
 
 class AlCombinedMaths extends StatelessWidget {
   const AlCombinedMaths({super.key});
@@ -98,8 +99,11 @@ class AlCombinedMaths extends StatelessWidget {
                             icon: Icons.functions,
                             title: "2025 AL",
                             subtitle: "full paper",
-                            url:
-                                "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                            toPage: PdfViewerPage(
+                              title: "2025 AL Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/Combined%20Maths/Past%20Papers/2024-AL-COMBINED-MATHS-PART-I-SINHALA-MEDIUM-AlevelApi-PDF.pdf",
+                            ),
                           ),
                           buildCommonCard(
                             icon: Icons.functions,
@@ -136,7 +140,6 @@ class AlCombinedMaths extends StatelessWidget {
                             url:
                                 "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
                           ),
-                          
                         ],
                       ),
                     ),
