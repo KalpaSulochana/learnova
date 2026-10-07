@@ -12,57 +12,59 @@ class AlmathssubjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: bgColor,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: primaryBlue,
-        elevation: 100,
-        title: Text(
-            "Select Stream",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: bgColor,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: primaryBlue,
+          elevation: 100,
+          title: Text(
+              "Select Stream",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
+          //centerTitle: true,
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 10),
+              buildCommonCard(
+                icon: Icons.functions,
+                title: "Combined Maths",
+                subtitle: "all resources",
+                toPage: AlCombinedMaths(),
+              ),
+              buildCommonCard(
+                icon: Icons.functions,
+                title: "Physics",
+                subtitle: "all resources",
+                toPage: AlPhysics(),
+              ),
+              buildCommonCard(
+                icon: Icons.functions,
+                title: "Chemistry",
+                subtitle: "all resources",
+                toPage: AlChemistry(),
+              ),
+              buildCommonCard(
+                icon: Icons.functions,
+                title: "ICT",
+                subtitle: "all resources",
+                toPage: AlICT(),
+              ),
+              buildCommonCard(
+                icon: Icons.functions,
+                title: "Higher Maths",
+                subtitle: "all resources",
+                toPage: AlHigherMaths(),
+              ),
+            ],
           ),
-        //centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 10),
-            buildCommonCard(
-              icon: Icons.functions,
-              title: "Combined Maths",
-              subtitle: "all resources",
-              toPage: AlCombinedMaths(),
-            ),
-            buildCommonCard(
-              icon: Icons.functions,
-              title: "Physics",
-              subtitle: "all resources",
-              toPage: AlPhysics(),
-            ),
-            buildCommonCard(
-              icon: Icons.functions,
-              title: "Chemistry",
-              subtitle: "all resources",
-              toPage: AlChemistry(),
-            ),
-            buildCommonCard(
-              icon: Icons.functions,
-              title: "ICT",
-              subtitle: "all resources",
-              toPage: AlICT(),
-            ),
-            buildCommonCard(
-              icon: Icons.functions,
-              title: "Higher Maths",
-              subtitle: "all resources",
-              toPage: AlHigherMaths(),
-            ),
-          ],
         ),
       ),
     );

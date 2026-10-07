@@ -19,7 +19,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
   Future<void> _launchWhatsApp() async {
     // Replace with your target phone number (include country code without '+' or zeros)
     const phoneNumber = "94758072146"; 
-    const message = "Hello! I am reaching out from your Flutter app.";
+    //const message = "Hello! I am reaching out from your Flutter app.";
     
     // Encode the URI safely
     final whatsappUrl = Uri.parse(
@@ -35,163 +35,172 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-
-        onPressed: () {
-          
-        },
-        backgroundColor: const Color(0xFF25D366), // WhatsApp Brand Green
-        foregroundColor: Colors.white,
-        //shape: const CircleBorder(), // Keeps it perfectly circular
-        
-        elevation: 6.0,
-        tooltip: 'Chat on WhatsApp',
-        child: IconButton(
-          icon: FaIcon(FontAwesomeIcons.whatsapp), // You can also use an image asset or FontAwesomeIcons.whatsapp
-          iconSize: 30,
-          onPressed: _launchWhatsApp,
-        ),
-      ),
-    
-      backgroundColor: bgColor,
-      appBar: AppBar(
-          title: const Text('Learnova'),
-          backgroundColor: primaryBlue,
+    return SafeArea(
+      child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+      
+          onPressed: () {
+            
+          },
+          backgroundColor: const Color(0xFF25D366), // WhatsApp Brand Green
           foregroundColor: Colors.white,
-          //centerTitle: true,
-
-          // 1. Interactive Leading Button
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            tooltip: 'Menu',
-            onPressed: () {
-              // Action on tap
-            },
+          //shape: const CircleBorder(), // Keeps it perfectly circular
+          
+          elevation: 6.0,
+          tooltip: 'Chat on WhatsApp',
+          child: IconButton(
+            icon: FaIcon(FontAwesomeIcons.whatsapp), // You can also use an image asset or FontAwesomeIcons.whatsapp
+            iconSize: 30,
+            onPressed: _launchWhatsApp,
           ),
-
-          // 2. Interactive Action Buttons & Dropdown Menu
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.search),
-              tooltip: 'Search',
+        ),
+      
+        backgroundColor: bgColor,
+        appBar: AppBar(
+            title:  Text('Learnova',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )
+            ),
+            backgroundColor: primaryBlue,
+            foregroundColor: Colors.white,
+            //centerTitle: true,
+      
+            // 1. Interactive Leading Button
+            leading: IconButton(
+              icon: const Icon(Icons.menu),
+              tooltip: 'Menu',
               onPressed: () {
                 // Action on tap
               },
             ),
-            
-            // Built-in interactive popup menu (no state code needed)
-            PopupMenuButton<String>(
-              color: primaryBlue.withValues(alpha:200,),
-
-              icon: const Icon(Icons.more_vert),
-              tooltip: 'More Options',
-              onSelected: (value) {
-                // Action on selection
-              },
-              itemBuilder: (BuildContext context) => [
-                 PopupMenuItem(
-                  value: 'settings',
-                  child: Text('Settings', style: TextStyle(
-                            color: cardWhite,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                          ),),
+      
+            // 2. Interactive Action Buttons & Dropdown Menu
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.search),
+                tooltip: 'Search',
+                onPressed: () {
+                  // Action on tap
+                },
+              ),
+              
+              // Built-in interactive popup menu (no state code needed)
+              PopupMenuButton<String>(
+                color: primaryBlue.withValues(alpha:200,),
+      
+                icon: const Icon(Icons.more_vert),
+                tooltip: 'More Options',
+                onSelected: (value) {
+                  // Action on selection
+                },
+                itemBuilder: (BuildContext context) => [
+                   PopupMenuItem(
+                    value: 'settings',
+                    child: Text('Settings', style: TextStyle(
+                              color: cardWhite,
+                              fontSize: 20,
+                              //fontWeight: FontWeight.w600,
+                            ),),
+                  ),
+                   PopupMenuItem(
+                    value: 'share',
+                    child: Text('Share', style: TextStyle(
+                              color: cardWhite,
+                              fontSize: 20,
+                              //fontWeight: FontWeight.w600,
+                            ),),
+                  ),
+                  PopupMenuItem(
+                    
+                    value: 'logout',
+                    child: Text('Logout', style: TextStyle(
+                              color: cardWhite,
+                              fontSize: 20,
+                              //fontWeight: FontWeight.w600,
+                            ),),
+                  ),
+                ],
+              ),
+            ],),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // --- SENIOR SECONDARY ---
+                //_buildSectionHeader("Senior Secondary", "O/L & A/L Preparation"),
+                _buildSpecialCard(
+                  title: "Advanced Level",
+                  subtitle: "Syllabus, Notes, Papers, etc...",
+                  icon: Icons.school,
+                  toPage: alStreamSelectionScreen(),
                 ),
-                 PopupMenuItem(
-                  value: 'share',
-                  child: Text('Share', style: TextStyle(
-                            color: cardWhite,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                          ),),
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    Expanded(child: _buildGradeCard(number: "10",title:  "Grade 10")),
+                    const SizedBox(width: 15),
+                    Expanded(child: _buildGradeCard(number: "11",title:  "Grade 11")),
+                  ],
                 ),
-                PopupMenuItem(
-                  value: 'logout',
-                  child: Text('Logout', style: TextStyle(
-                            color: cardWhite,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                          ),),
+                const SizedBox(height: 15),
+      
+                // --- SECONDARY EDUCATION ---
+                /*_buildSectionHeader(
+                  "Secondary Education",
+                  "Middle school (Grade 6 - 9)",
+                ),*/
+                Row(
+                  children: [
+                    Expanded(child: _buildGradeCard(number: "9", title: "Grade 9")),
+                    const SizedBox(width: 15),
+                    Expanded(child: _buildGradeCard(number: "8", title: "Grade 8")),
+                  ],
                 ),
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    Expanded(child: _buildGradeCard(number: "7",title:  "Grade 7")),
+                    const SizedBox(width: 15),
+                    Expanded(child: _buildGradeCard(number: "6", title: "Grade 6")),
+                  ],
+                ),
+                const SizedBox(height: 15),
+      
+                // --- PRIMARY EDUCATION ---
+                /*_buildSectionHeader(
+                  "Primary Education",
+                  "Foundation years (Grade 1 - 5)",
+                ),*/
+                _buildSpecialCard(
+                  title: "Grade 5 Scholarship",
+                  subtitle: "Syllabus, Notes, Papers, etc...",
+                  icon:Icons.emoji_events, // Changed icon to represent scholarship
+                  toPage: alStreamSelectionScreen(),
+                ),
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    Expanded(child: _buildGradeCard(number: "4", title: "Grade 4")),
+                    const SizedBox(width: 15),
+                    Expanded(child: _buildGradeCard(number: "3", title: "Grade 3")),
+                  ],
+                ),
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    Expanded(child: _buildGradeCard(number: "2", title: "Grade 2")),
+                    const SizedBox(width: 15),
+                    Expanded(child: _buildGradeCard(number: "1", title: "Grade 1")),
+                  ],
+                ),
+                const SizedBox(height: 40),
               ],
             ),
-          ],),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // --- SENIOR SECONDARY ---
-              //_buildSectionHeader("Senior Secondary", "O/L & A/L Preparation"),
-              _buildSpecialCard(
-                title: "Advanced Level",
-                subtitle: "Syllabus, Notes, Papers, etc...",
-                icon: Icons.school,
-                toPage: alStreamSelectionScreen(),
-              ),
-              const SizedBox(height: 15),
-              Row(
-                children: [
-                  Expanded(child: _buildGradeCard(number: "10",title:  "Grade 10")),
-                  const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard(number: "11",title:  "Grade 11")),
-                ],
-              ),
-              const SizedBox(height: 15),
-
-              // --- SECONDARY EDUCATION ---
-              /*_buildSectionHeader(
-                "Secondary Education",
-                "Middle school (Grade 6 - 9)",
-              ),*/
-              Row(
-                children: [
-                  Expanded(child: _buildGradeCard(number: "9", title: "Grade 9")),
-                  const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard(number: "8", title: "Grade 8")),
-                ],
-              ),
-              const SizedBox(height: 15),
-              Row(
-                children: [
-                  Expanded(child: _buildGradeCard(number: "7",title:  "Grade 7")),
-                  const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard(number: "6", title: "Grade 6")),
-                ],
-              ),
-              const SizedBox(height: 15),
-
-              // --- PRIMARY EDUCATION ---
-              /*_buildSectionHeader(
-                "Primary Education",
-                "Foundation years (Grade 1 - 5)",
-              ),*/
-              _buildSpecialCard(
-                title: "Grade 5 Scholarship",
-                subtitle: "Syllabus, Notes, Papers, etc...",
-                icon:Icons.emoji_events, // Changed icon to represent scholarship
-                toPage: alStreamSelectionScreen(),
-              ),
-              const SizedBox(height: 15),
-              Row(
-                children: [
-                  Expanded(child: _buildGradeCard(number: "4", title: "Grade 4")),
-                  const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard(number: "3", title: "Grade 3")),
-                ],
-              ),
-              const SizedBox(height: 15),
-              Row(
-                children: [
-                  Expanded(child: _buildGradeCard(number: "2", title: "Grade 2")),
-                  const SizedBox(width: 15),
-                  Expanded(child: _buildGradeCard(number: "1", title: "Grade 1")),
-                ],
-              ),
-              const SizedBox(height: 40),
-            ],
           ),
         ),
       ),

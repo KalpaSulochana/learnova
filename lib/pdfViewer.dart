@@ -167,115 +167,121 @@ class _PdfViewerPageState extends State <PdfViewerPage>{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: bgColor,
-      // 1. Wrap the Scaffold body in a GestureDetector to catch screen taps
-      body: GestureDetector(
-        onTap: _toggleUiVisibility,
-        child: Stack(
-          children: [
-            // The PDF Viewer is the base layer
-            SfPdfViewer.network(
-              widget.pdfUrl,
-              controller: _pdfViewerController,
-              canShowScrollHead: false,
-              pageSpacing: 6,
-
-              onDocumentLoaded: (PdfDocumentLoadedDetails details) {
-                if (mounted) {
-                  setState(() {
-                    _isLoading = false;
-                    _currentPage = 1;
-                    _pageCount = _pdfViewerController.pageCount;
-                  });
-                }
-              },
-
-              onPageChanged: (PdfPageChangedDetails details) {
-                if (mounted) {
-                  setState(() {
-                    _currentPage = details.newPageNumber;
-                  });
-                }
-              },
-
-              onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
-                if (mounted) {
-                  setState(() {
-                    _isLoading = false;
-                    _hasError = true;
-                    _errorMessage = details.error;
-                  });
-                }
-              },
-            ),
-
-            if (_isLoading) const Center(child: CircularProgressIndicator()),
-
-            if (_hasError)
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Text(
-                    "Failed to load: $_errorMessage",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey.shade700),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: bgColor,
+        // 1. Wrap the Scaffold body in a GestureDetector to catch screen taps
+        body: GestureDetector(
+          onTap: _toggleUiVisibility,
+          child: Stack(
+            children: [
+              // The PDF Viewer is the base layer
+              SfPdfViewer.network(
+                widget.pdfUrl,
+                controller: _pdfViewerController,
+                canShowScrollHead: false,
+                pageSpacing: 6,
+      
+                onDocumentLoaded: (PdfDocumentLoadedDetails details) {
+                  if (mounted) {
+                    setState(() {
+                      _isLoading = false;
+                      _currentPage = 1;
+                      _pageCount = _pdfViewerController.pageCount;
+                    });
+                  }
+                },
+      
+                onPageChanged: (PdfPageChangedDetails details) {
+                  if (mounted) {
+                    setState(() {
+                      _currentPage = details.newPageNumber;
+                    });
+                  }
+                },
+      
+                onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
+                  if (mounted) {
+                    setState(() {
+                      _isLoading = false;
+                      _hasError = true;
+                      _errorMessage = details.error;
+                    });
+                  }
+                },
+              ),
+      
+              if (_isLoading) const Center(child: CircularProgressIndicator()),
+      
+              if (_hasError)
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Text(
+                      "Failed to load: $_errorMessage",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey.shade700),
+                    ),
                   ),
                 ),
-              ),
-
-            // 2. Animated AppBar at the top
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: AnimatedOpacity(
-                opacity: _showUi ? 1.0 : 0.0,
-                duration: const Duration(milliseconds: 200),
-                // IgnorePointer prevents invisible buttons from being clicked
-                child: IgnorePointer(
-                  ignoring: !_showUi,
-                  child: AppBar(
-                    automaticallyImplyLeading: false,
-                    
-                    title: Text(widget.title, ),
-                    elevation: 1,
-                    // Make the AppBar semi-transparent like the reference
-                    backgroundColor: primaryBlue,
-                  ),
-                ),
-              ),
-            ),
-
-            // 3. Animated Floating Page Counter at the bottom right
-            if (!_isLoading && !_hasError && _pageCount > 0)
+      
+              // 2. Animated AppBar at the top
               Positioned(
-                bottom: 20,
-                right: 20,
+                top: 0,
+                left: 0,
+                right: 0,
                 child: AnimatedOpacity(
                   opacity: _showUi ? 1.0 : 0.0,
                   duration: const Duration(milliseconds: 200),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 8,
+                  // IgnorePointer prevents invisible buttons from being clicked
+                  child: IgnorePointer(
+                    ignoring: !_showUi,
+                    child: AppBar(
+                      automaticallyImplyLeading: false,
+                      
+                      title: Text(widget.title, style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )),
+                      elevation: 1,
+                      // Make the AppBar semi-transparent like the reference
+                      backgroundColor: primaryBlue,
                     ),
-                    decoration: BoxDecoration(
-                      color: textDark,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      "page $_currentPage of $_pageCount",
-                      style: TextStyle(
-                        color: cardWhite,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+      
+              // 3. Animated Floating Page Counter at the bottom right
+              if (!_isLoading && !_hasError && _pageCount > 0)
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: AnimatedOpacity(
+                    opacity: _showUi ? 1.0 : 0.0,
+                    duration: const Duration(milliseconds: 200),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
+                      decoration: BoxDecoration(
+                        color: textDark,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        "page $_currentPage of $_pageCount",
+                        style: TextStyle(
+                          color: cardWhite,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-          ],
+            ],
+          ),
         ),
       ),
     );
