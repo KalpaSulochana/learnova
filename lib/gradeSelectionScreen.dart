@@ -1,8 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:learnova/alStreamSelection.dart';
 import 'package:learnova/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GradeSelectionScreen extends StatefulWidget {
   const GradeSelectionScreen({super.key});
@@ -12,24 +14,44 @@ class GradeSelectionScreen extends StatefulWidget {
 }
 
 class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
+
+  // Function to open WhatsApp URL
+  Future<void> _launchWhatsApp() async {
+    // Replace with your target phone number (include country code without '+' or zeros)
+    const phoneNumber = "94758072146"; 
+    const message = "Hello! I am reaching out from your Flutter app.";
+    
+    // Encode the URI safely
+    final whatsappUrl = Uri.parse(
+      "https://wa.me/+$phoneNumber"
+    );
+
+    if (await canLaunchUrl(whatsappUrl)) {
+      await launchUrl(whatsappUrl, mode: LaunchMode.externalApplication);
+    } else {
+      throw 'Could not launch $whatsappUrl';
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+
         onPressed: () {
-          // Action when tapped
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Action button pressed')),
-          );
+          
         },
-        backgroundColor: primaryBlue,
+        backgroundColor: const Color(0xFF25D366), // WhatsApp Brand Green
         foregroundColor: Colors.white,
-        elevation: 4.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
+        //shape: const CircleBorder(), // Keeps it perfectly circular
+        
+        elevation: 6.0,
+        tooltip: 'Chat on WhatsApp',
+        child: IconButton(
+          icon: FaIcon(FontAwesomeIcons.whatsapp), // You can also use an image asset or FontAwesomeIcons.whatsapp
+          iconSize: 30,
+          onPressed: _launchWhatsApp,
         ),
-        tooltip: 'New Chat',
-        child: const Icon(Icons.chat),
       ),
     
       backgroundColor: bgColor,
@@ -37,7 +59,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
           title: const Text('Learnova'),
           backgroundColor: primaryBlue,
           foregroundColor: Colors.white,
-          centerTitle: true,
+          //centerTitle: true,
 
           // 1. Interactive Leading Button
           leading: IconButton(
@@ -60,7 +82,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
             
             // Built-in interactive popup menu (no state code needed)
             PopupMenuButton<String>(
-              color: primaryBlue,
+              color: primaryBlue.withValues(alpha:200,),
 
               icon: const Icon(Icons.more_vert),
               tooltip: 'More Options',
@@ -71,23 +93,26 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
                  PopupMenuItem(
                   value: 'settings',
                   child: Text('Settings', style: TextStyle(
-                    fontSize: 15,
-                    color: textDark,
-                  ),),
+                            color: cardWhite,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),),
                 ),
                  PopupMenuItem(
                   value: 'share',
                   child: Text('Share', style: TextStyle(
-                    fontSize: 15,
-                    color: textDark,
-                  ),),
+                            color: cardWhite,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),),
                 ),
                 PopupMenuItem(
                   value: 'logout',
                   child: Text('Logout', style: TextStyle(
-                    fontSize: 15,
-                    color: textDark,
-                  ),),
+                            color: cardWhite,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),),
                 ),
               ],
             ),
@@ -303,60 +328,65 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
             ),
           ],
         ),
-        child: Row(
-          
-          children: [
-            SizedBox(width: 25,),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  height: 40,
-                  width: 50,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: primaryBlue,
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: primaryBlue.withOpacity(0.3),
-                        blurRadius: 6,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      number,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+             
+            
+              
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    height: 40,
+                    width: 50,
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: primaryBlue,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: primaryBlue.withOpacity(0.3),
+                          blurRadius: 6,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        number,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16,
-                    color: textDark,
+                  const SizedBox(height: 10),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      color: textDark,
+                    ),
                   ),
-                ),
+                  
+                 
+                ],
+              ),
                 
-               
-              ],
-            ),
-      
-            SizedBox(width: 20,),
-            Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: primaryBlue,
-                  size: 16,
-                ),
-          ],
+              
+              Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: primaryBlue,
+                    size: 16,
+                  ),
+            ],
+          ),
         ),
       ),
     );

@@ -19,10 +19,14 @@ class AlmathssubjectScreen extends StatelessWidget {
         backgroundColor: primaryBlue,
         elevation: 100,
         title: Text(
-          "Select subject",
-          style: TextStyle(color: primaryBlue, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
+            "Select Stream",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        //centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(

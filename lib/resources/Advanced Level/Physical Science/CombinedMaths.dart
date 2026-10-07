@@ -18,7 +18,7 @@ class AlCombinedMaths extends StatelessWidget {
           backgroundColor: primaryBlue,
           elevation: 100,
           title: Text(
-            "Select Stream",
+            "Select resource",
             style: TextStyle(
               color: cardWhite,
               fontSize: 20,
