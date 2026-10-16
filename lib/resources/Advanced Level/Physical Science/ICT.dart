@@ -97,7 +97,7 @@ class AlICT extends StatelessWidget {
                       child: Column(
                         children: [
                           SizedBox(height: 10,),
-                          buildCommonCard(icon: Icons.functions, title: "2025 AL", subtitle: "full paper", url: "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",)
+                          CommonCard(icon: Icons.functions, title: "2025 AL", subtitle: "full paper", url: "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",)
                         ],
                       ),
                     ),

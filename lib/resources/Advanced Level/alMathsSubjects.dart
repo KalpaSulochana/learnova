@@ -33,31 +33,31 @@ class AlmathssubjectScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 10),
-              buildCommonCard(
+              CommonCard(
                 icon: Icons.functions,
                 title: "Combined Maths",
                 subtitle: "all resources",
                 toPage: AlCombinedMaths(),
               ),
-              buildCommonCard(
+              CommonCard(
                 icon: Icons.functions,
                 title: "Physics",
                 subtitle: "all resources",
                 toPage: AlPhysics(),
               ),
-              buildCommonCard(
+              CommonCard(
                 icon: Icons.functions,
                 title: "Chemistry",
                 subtitle: "all resources",
                 toPage: AlChemistry(),
               ),
-              buildCommonCard(
+              CommonCard(
                 icon: Icons.functions,
                 title: "ICT",
                 subtitle: "all resources",
                 toPage: AlICT(),
               ),
-              buildCommonCard(
+              CommonCard(
                 icon: Icons.functions,
                 title: "Higher Maths",
                 subtitle: "all resources",
