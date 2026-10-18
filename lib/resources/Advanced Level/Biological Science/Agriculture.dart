@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
+import 'package:learnova/pdf_viewer_page.dart';
 
 class AlAgriculture extends StatelessWidget {
   const AlAgriculture({super.key});
@@ -17,7 +18,7 @@ class AlAgriculture extends StatelessWidget {
           backgroundColor: primaryBlue,
           elevation: 100,
           title: Text(
-            "Select Stream",
+            "Select Resource",
             style: TextStyle(
               color: cardWhite,
               fontSize: 20,
@@ -38,7 +39,7 @@ class AlAgriculture extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:  [
                     Text(
-                      'A/L Combined Maths',
+                      'A/L Agriculture',
                       style: TextStyle(
                         color: textDark
                         ,
@@ -50,7 +51,7 @@ class AlAgriculture extends StatelessWidget {
                    
                     
                     Text(
-                      'All agri',
+                      'All Resources',
                       style: TextStyle(
                         color: textLight,
                         fontSize: 15,
@@ -97,7 +98,116 @@ class AlAgriculture extends StatelessWidget {
                       child: Column(
                         children: [
                           SizedBox(height: 10,),
-                          CommonCard(icon: Icons.functions, title: "2025", subtitle: "al paper", url: "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",)
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2026 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2026-agricultural-science-past-papers-6a82e089a5230.pdf",
+                              title: "2026 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2025 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2025-agricultural-science-past-papers-691b3c362e82e.pdf",
+                              title: "2025 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2024 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2024-agricultural-science-past-papers-68afec91637b5.pdf",
+                              title: "2024 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2023 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2023-agricultural-science-past-papers-65c323d501180.pdf",
+                              title: "2023 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2022 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2022-agricultural-science-past-papers-6410072c40fa8.pdf",
+                              title: "2022 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2021 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2021-agricultural-science-past-papers-63feec4995c8f.pdf",
+                              title: "2021 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2020 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2020-agricultural-science-past-papers-61cd7fd7bf938.pdf",
+                              title: "2020 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2019 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2019-agricultural-science-past-papers-61c2e982a6440.pdf",
+                              title: "2019 A/L Agriculture",
+                            ),
+                          ),buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2018 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2018-agricultural-science-past-papers-61c2d1407fbb9.pdf",
+                              title: "2018 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2017 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2017-agricultural-science-past-papers-61cd786697dbc.pdf",
+                              title: "2017 A/L Agriculture",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2016 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/agri/past%20papers/gce-advance-level-exam-2016-agricultural-science-past-papers-61cd71f126efb.pdf",
+                              title: "2016 A/L Agriculture",
+                            ),
+                          ),
+                          
                         ],
                       ),
                     ),

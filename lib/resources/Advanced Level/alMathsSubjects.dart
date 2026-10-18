@@ -19,7 +19,7 @@ class AlmathssubjectScreen extends StatelessWidget {
         backgroundColor: primaryBlue,
         elevation: 100,
         title: Text(
-            "Select Stream",
+            "Select Subject",
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
@@ -33,31 +33,31 @@ class AlmathssubjectScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 10),
-              CommonCard(
+              buildCommonCard(
                 icon: Icons.functions,
                 title: "Combined Maths",
                 subtitle: "all resources",
                 toPage: AlCombinedMaths(),
               ),
-              CommonCard(
+              buildCommonCard(
                 icon: Icons.functions,
                 title: "Physics",
                 subtitle: "all resources",
                 toPage: AlPhysics(),
               ),
-              CommonCard(
+              buildCommonCard(
                 icon: Icons.functions,
                 title: "Chemistry",
                 subtitle: "all resources",
                 toPage: AlChemistry(),
               ),
-              CommonCard(
+              buildCommonCard(
                 icon: Icons.functions,
                 title: "ICT",
                 subtitle: "all resources",
                 toPage: AlICT(),
               ),
-              CommonCard(
+              buildCommonCard(
                 icon: Icons.functions,
                 title: "Higher Maths",
                 subtitle: "all resources",

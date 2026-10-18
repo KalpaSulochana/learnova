@@ -17,7 +17,7 @@ class AlHigherMaths extends StatelessWidget {
           backgroundColor: primaryBlue,
           elevation: 100,
           title: Text(
-            "Select Stream",
+            "Select Resource",
             style: TextStyle(
               color: cardWhite,
               fontSize: 20,
@@ -97,7 +97,7 @@ class AlHigherMaths extends StatelessWidget {
                       child: Column(
                         children: [
                           SizedBox(height: 10,),
-                          CommonCard(icon: Icons.functions, title: "2025", subtitle: "al paper", url: "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",)
+                          buildCommonCard(icon: Icons.functions, title: "2025", subtitle: "al paper", url: "https://drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",)
                         ],
                       ),
                     ),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
-import 'package:learnova/models/resource_item.dart';
-import 'package:learnova/providers/resource_providers.dart';
+import 'package:learnova/pdf_viewer_page.dart';
 
 class AlCombinedMaths extends StatelessWidget {
   const AlCombinedMaths({super.key});
@@ -33,7 +31,7 @@ class AlCombinedMaths extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10),
-
+      
               // Unit Titles
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -49,7 +47,7 @@ class AlCombinedMaths extends StatelessWidget {
                         height: 1.2,
                       ),
                     ),
-
+      
                     Text(
                       'All resources',
                       style: TextStyle(
@@ -61,9 +59,9 @@ class AlCombinedMaths extends StatelessWidget {
                   ],
                 ),
               ),
-
+      
               const SizedBox(height: 5),
-
+      
               // Tab Bar
               TabBar(
                 isScrollable: true,
@@ -88,14 +86,172 @@ class AlCombinedMaths extends StatelessWidget {
                   Tab(text: 'Marking Schemes'),
                 ],
               ),
-
+      
               // Tab Views
               Expanded(
                 child: TabBarView(
                   children: [
-                    const _ResourceListView(type: ResourceType.pastPaper),
-                    const _ResourceListView(type: ResourceType.note),
-                    const _ResourceListView(type: ResourceType.markingScheme),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2026 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2026 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2026-combined-mathematics-past-papers-6a7d1a880cf78.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                          icon: Icons.picture_as_pdf_outlined,
+                            title: "2025 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2025 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2025-combined-mathematics-past-papers-69b283e8060d8.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2025 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2025 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2025-combined-mathematics-past-papers-69b283e8060d8.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                         icon: Icons.picture_as_pdf_outlined,
+                            title: "2024 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2024 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/2024-AL-Combined-Mathematics-Past-Paper-Sinhala-Medium-Past-Papers-wiki.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                 icon: Icons.picture_as_pdf_outlined,
+                            title: "2023 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2023 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2023-combined-mathematics-past-papers-659bb1d0e7d71.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                         icon: Icons.picture_as_pdf_outlined,
+                            title: "2022 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2022 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2022-combined-mathematics-past-papers-63ec6cd5bc2a8.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                          icon: Icons.picture_as_pdf_outlined,
+                            title: "2021 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2021 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2021-combined-mathematics-past-papers-620dda3300e03.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                        icon: Icons.picture_as_pdf_outlined,
+                            title: "2020 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2020 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2020-combined-mathematics-past-papers-61cd96021667f.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                         icon: Icons.picture_as_pdf_outlined,
+                            title: "2019 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2019 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2019-combined-mathematics-past-papers-61c2f22f0244b.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                        icon: Icons.picture_as_pdf_outlined,
+                            title: "2018 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2018 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2018-combined-mathematics-past-papers-61cd7cf05cca0.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2017 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2017 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2017-combined-mathematics-past-papers-61c2c8023e3f1.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2016 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2016 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2016-combined-mathematics-past-papers-61c5ae15e892a.pdf",
+                            ),
+                          ),
+
+                          buildCommonCard(
+                          icon: Icons.picture_as_pdf_outlined,
+                            title: "2015 A/L",
+                            subtitle: "full paper",
+                            toPage: PdfViewerPage(
+                              title: "2015 A/L Combined Maths",
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2015-combined-mathematics-past-papers-61c2b52d2324e.pdf",
+                            ),
+                          ),
+                          
+                         //drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
+                          
+                        ],
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        'Notes Content',
+                        style: TextStyle(color: textDark, fontSize: 16),
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Column(children: [SizedBox(height: 10)]),
+                    ),
                   ],
                 ),
               ),
@@ -103,111 +259,6 @@ class AlCombinedMaths extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _ResourceListView extends ConsumerWidget {
-  const _ResourceListView({required this.type});
-
-  final ResourceType type;
-  static const String _subjectId = 'combined_maths';
-
-  Future<void> _refresh(WidgetRef ref) async {
-    try {
-      await ref.read(resourceRepositoryProvider).getResources(
-            subjectId: _subjectId,
-            forceRefresh: true,
-          );
-    } catch (_) {
-      // Keep the screen stable; the provider below will expose any uncached error.
-    } finally {
-      ref.invalidate(resourceItemsProvider(_subjectId));
-    }
-  }
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<List<ResourceItem>> resources =
-        ref.watch(resourceItemsProvider(_subjectId));
-
-    return resources.when(
-      loading: () => ListView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.only(top: 10),
-        children: [
-          const SizedBox(height: 10),
-          Center(
-            child: SizedBox(
-              width: 24,
-              height: 24,
-              child: CircularProgressIndicator(
-                strokeWidth: 2.5,
-                color: primaryBlue,
-              ),
-            ),
-          ),
-        ],
-      ),
-      error: (Object error, StackTrace stackTrace) => ListView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-        children: [
-          const SizedBox(height: 10),
-          Center(
-            child: Column(
-              children: [
-                Text(
-                  'Could not load resources',
-                  style: TextStyle(color: textDark, fontSize: 16),
-                ),
-                const SizedBox(height: 8),
-                TextButton(
-                  onPressed: () => ref.invalidate(resourceItemsProvider(_subjectId)),
-                  child: const Text('Try again'),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      data: (List<ResourceItem> allResources) {
-        final List<ResourceItem> visibleItems = allResources
-            .where((ResourceItem item) =>
-                item.subjectId == _subjectId && item.type == type)
-            .toList(growable: false);
-
-        if (visibleItems.isEmpty) {
-          if (type == ResourceType.note) {
-            return Center(
-              child: Text(
-                'Notes Content',
-                style: TextStyle(color: textDark, fontSize: 16),
-              ),
-            );
-          }
-
-          // Matches the original empty Marking Schemes tab, with only its top gap.
-          return ListView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            children: const [SizedBox(height: 10)],
-          );
-        }
-
-        return RefreshIndicator(
-          color: primaryBlue,
-          backgroundColor: cardWhite,
-          onRefresh: () => _refresh(ref),
-          child: ListView.builder(
-            physics: const AlwaysScrollableScrollPhysics(),
-            padding: const EdgeInsets.only(top: 10),
-            itemCount: visibleItems.length,
-            itemBuilder: (BuildContext context, int index) {
-              return CommonCard.fromResource(resource: visibleItems[index]);
-            },
-          ),
-        );
-      },
     );
   }
 }
