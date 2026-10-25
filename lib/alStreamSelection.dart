@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnova/resources/Advanced%20Level/Arts/artSubStreams.dart';
 import 'package:learnova/resources/Advanced%20Level/alMathsSubjects.dart';
 import 'package:learnova/resources/Advanced%20Level/alBioSubjects.dart';
 import 'package:learnova/colors.dart';
@@ -32,7 +33,7 @@ class alStreamSelectionScreen extends StatelessWidget {
               buildCommonCard(icon: Icons.functions, title: "Physical Science", subtitle: "Com Maths, Physics, Chemistry", toPage: AlmathssubjectScreen(),),
               buildCommonCard(icon: Icons.science, title: "Bio Science", subtitle: "Biology, Physics, Chemistry", toPage: AlBioSubjectScreen(),),
               buildCommonCard(icon: Icons.functions, title: "Commerce", subtitle: "Econ, BS, Accounting", toPage: AlmathssubjectScreen(),),
-              buildCommonCard(icon: Icons.draw, title: "Arts", subtitle: "Languages, Social Sciensces", toPage: AlmathssubjectScreen(),),
+              buildCommonCard(icon: Icons.draw, title: "Arts", subtitle: "Languages, Social Sciensces", toPage: AlArtSubstreamScreen(),),
               buildCommonCard(icon: Icons.functions, title: "Engineering Technology", subtitle: "ET, SFT, ICT", toPage: AlmathssubjectScreen(),),
               buildCommonCard(icon: Icons.functions, title: "Biosystem Technology", subtitle: "BST, SFT, ICT", toPage: AlmathssubjectScreen(),),
               

@@ -4,7 +4,7 @@ import 'package:learnova/colors.dart';
 import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Chemistry.dart';
 import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Physics.dart';
 import 'package:learnova/resources/Advanced%20Level/Physical%20Science/CombinedMaths.dart';
-import 'package:learnova/resources/Advanced%20Level/Physical%20Science/HigherMaths.dart';
+import 'package:learnova/resources/Advanced%20Level/alEnglish.dart';
 import 'package:learnova/resources/Advanced%20Level/Physical%20Science/ICT.dart';
 
 class AlmathssubjectScreen extends StatelessWidget {
@@ -54,14 +54,20 @@ class AlmathssubjectScreen extends StatelessWidget {
               buildCommonCard(
                 icon: Icons.functions,
                 title: "ICT",
-                subtitle: "Past Papers, Resource Books, etc...",
+                subtitle: "Past Papers, Marking Schemes, etc...",
                 toPage: AlICT(),
               ),
-              buildCommonCard(
+              /*buildCommonCard(
                 icon: Icons.functions,
                 title: "Higher Maths",
                 subtitle: "Past Papers",
                 toPage: AlHigherMaths(),
+              ),*/
+              buildCommonCard(
+                icon: Icons.functions,
+                title: "English",
+                subtitle: "Past Papers, Books, etc...",
+                toPage: AlEnglish(),
               ),
             ],
           ),
