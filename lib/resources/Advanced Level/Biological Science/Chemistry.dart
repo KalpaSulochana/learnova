@@ -225,6 +225,16 @@ class AlChemistry extends StatelessWidget {
                           SizedBox(height: 10),
                           buildCommonCard(
                             icon: Icons.auto_stories_sharp,
+                            title: "Practical Book",
+                            subtitle: "Practical Hand Book",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/chemistry/resource%20books/sOMAL%20Chemistry%20Practical%20Hand%20book.pdf",
+                              title: "Practical Hand Book",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
                             title: "unit 1/2/3",
                             subtitle:
                                 "Atomic Structure, Structure and Bonding and Chemical Calculations",
@@ -289,16 +299,7 @@ class AlChemistry extends StatelessWidget {
                                   "Industrial Chemistry and Environmental Pollution",
                             ),
                           ),
-                          buildCommonCard(
-                            icon: Icons.auto_stories_sharp,
-                            title: "Practical Book",
-                            subtitle: "Practical Hand Book",
-                            toPage: PdfViewerPage(
-                              pdfUrl:
-                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/chemistry/resource%20books/sOMAL%20Chemistry%20Practical%20Hand%20book.pdf",
-                              title: "Practical Hand Book",
-                            ),
-                          ),
+                          
                         ],
                       ),
                     ),

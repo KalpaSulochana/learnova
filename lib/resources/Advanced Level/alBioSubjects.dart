@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:learnova/card.dart';
 import 'package:learnova/colors.dart';
 import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Agriculture.dart';
+import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Biology.dart';
 import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Chemistry.dart';
 import 'package:learnova/resources/Advanced%20Level/Biological%20Science/Physics.dart';
-import 'package:learnova/resources/Advanced%20Level/Physical%20Science/CombinedMaths.dart';
+
 
 
 class AlBioSubjectScreen extends StatelessWidget {
@@ -37,7 +38,7 @@ class AlBioSubjectScreen extends StatelessWidget {
                 icon: Icons.functions,
                 title: "Biology",
                 subtitle: "all resources",
-                toPage: AlCombinedMaths(),
+                toPage: AlBiology(),
               ),
               buildCommonCard(
                 icon: Icons.functions,

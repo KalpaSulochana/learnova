@@ -84,8 +84,8 @@ class AlICT extends StatelessWidget {
                 dividerColor: Colors.transparent,
                 tabs: const [
                   Tab(text: 'Past Papers'),
-                  Tab(text: 'Notes'),
                   Tab(text: 'Marking Schemes'),
+                  
                 ],
               ),
         
@@ -221,16 +221,101 @@ class AlICT extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Center(
-                      child: Text(
-                        'Notes Content',
-                        style: TextStyle(color: textDark, fontSize: 16),
-                      ),
-                    ),
+                   
                     SingleChildScrollView(
                       child: Column(
                         children: [
                           SizedBox(height: 10,),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2025 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2025-AL-ICT-Marking-SM-Past-Papers-Wiki%20(1).pdf",
+                              title: "2025 A/L ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2023 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2023%20arking.pdf",
+                              title: "2023 A/L ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2021 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2021-AL-ICT-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2021 A/L ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2020 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2020-AL-ICT-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2020 A/L ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2019 A/L NEW",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2019-AL-ICT-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2019 A/L NEW ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2019 A/L OLD",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2019-AL-ICT-Marking-Scheme-Sinhala-Medium-Old-Syllabus.pdf",
+                              title: "2019 A/L OLD ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2018 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2018-AL-ICT-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2018 A/L ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2017 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2017-AL-ICT-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2017 A/L ICT Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2016 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/ict/marking%20schemes/2016-AL-ICT-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2016 A/L ICT Marking Scheme",
+                            ),
+                          ),
                           
                         ],
                       ),

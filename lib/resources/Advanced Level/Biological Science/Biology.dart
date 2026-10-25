@@ -85,7 +85,7 @@ class AlBiology extends StatelessWidget {
                 tabs: const [
                   Tab(text: 'Past Papers'),
                   Tab(text: 'Resource Books'),
-                  Tab(text: 'Marking Schemes'),
+                
                 ],
               ),
         
@@ -93,6 +93,8 @@ class AlBiology extends StatelessWidget {
                Expanded(
                 child: TabBarView(
                   children: [
+
+                    //past paperes
                     
                     SingleChildScrollView(
                       child: Column(
@@ -211,10 +213,24 @@ class AlBiology extends StatelessWidget {
                         ],
                       ),
                     ),
+
+                    //resource books
+
+                    
                     SingleChildScrollView(
                       child: Column(
                         children: [
                           SizedBox(height: 10,),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "Practical Book",
+                            subtitle: "Practical Hand Book",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/biology/resource%20books/sALOM%20Biology%20Practical%20Handbook.pdf",
+                              title: "Biology Practical Book",
+                            ),
+                          ),
                           buildCommonCard(
                             icon: Icons.picture_as_pdf_outlined,
                             title: "Unit 1",
@@ -325,29 +341,17 @@ class AlBiology extends StatelessWidget {
                               title: "Unit 10-Applied Biology",
                             ),
                           ),
-                          buildCommonCard(
-                            icon: Icons.picture_as_pdf_outlined,
-                            title: "Practical Book",
-                            subtitle: "Practical Hand Book",
-                            toPage: PdfViewerPage(
-                              pdfUrl:
-                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/bio%20science/biology/resource%20books/sALOM%20Biology%20Practical%20Handbook.pdf",
-                              title: "Biology Practical Book",
-                            ),
-                          ),
-
-                        ],
-                      ),
-                    ),
-
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 10,),
                           
+
                         ],
                       ),
                     ),
+
+                    
+                          
+                    
+                    
+                
                   ],
                 ),
               ),

@@ -4,12 +4,10 @@ import 'package:learnova/alStreamSelection.dart';
 import 'package:learnova/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-  String selectedLanguage = 'English';
-  final List<String> languages = ['English', 'Sinhala', 'Tamil'];
-
+String selectedLanguage = 'English';
+final List<String> languages = ['English', 'Sinhala', 'Tamil'];
 
 class GradeSelectionScreen extends StatefulWidget {
-  
   const GradeSelectionScreen({super.key});
 
   @override
@@ -17,10 +15,6 @@ class GradeSelectionScreen extends StatefulWidget {
 }
 
 class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
-  
-
-    
-
   // Function to open WhatsApp URL
   Future<void> _launchWhatsApp() async {
     // Replace with your target phone number (include country code without '+' or zeros)
@@ -45,7 +39,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
         backgroundColor: const Color(0xFF25D366), // WhatsApp Brand Green
         foregroundColor: Colors.white,
         //shape: const CircleBorder(), // Keeps it perfectly circular
-    
+
         elevation: 6.0,
         tooltip: 'Chat on WhatsApp',
         child: IconButton(
@@ -56,7 +50,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
           onPressed: _launchWhatsApp,
         ),
       ),
-    
+
       backgroundColor: bgColor,
       appBar: AppBar(
         title: Text(
@@ -70,10 +64,9 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
         backgroundColor: primaryBlue,
         foregroundColor: Colors.white,
         //centerTitle: true,
-    
+
         // 1. Interactive Leading Button
-        
-    
+
         // 2. Interactive Action Buttons & Dropdown Menu
         /*
         actions: [
@@ -132,55 +125,58 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
           ),
         ],*/
       ),
-    
+
       drawer: Drawer(
         backgroundColor: primaryBlue,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             ListTile(
-              leading: Icon(Icons.home, color: textLight,),
-              title: Text('Home', style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: textLight,
-              )),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings, color: textLight,),
-              title: Text('Settings', style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: textLight,
-              ),),
-            ),
-
-            ListTile(
-                leading: const Icon(Icons.language),
-                title: const Text('Language'),
-                trailing: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: selectedLanguage,
-                    items: languages.map((String lang) {
-                      return DropdownMenuItem<String>(
-                        value: lang,
-                        child: Text(lang),
-                      );
-                    }).toList(),
-                    onChanged: (String? newLanguage) {
-                      if (newLanguage != null) {
-                        setState(() {
-                          selectedLanguage = newLanguage;
-                        });
-                      }
-                    },
-                  ),
+              leading: Icon(Icons.home, color: textLight),
+              title: Text(
+                'Home',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: textLight,
                 ),
               ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings, color: textLight),
+              title: Text(
+                'Settings',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: textLight,
+                ),
+              ),
+            ),
 
+            ListTile(
+              leading: const Icon(Icons.language),
+              title: const Text('Language'),
+              trailing: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  value: selectedLanguage,
+                  items: languages.map((String lang) {
+                    return DropdownMenuItem<String>(
+                      value: lang,
+                      child: Text(lang),
+                    );
+                  }).toList(),
+                  onChanged: (String? newLanguage) {
+                    if (newLanguage != null) {
+                      setState(() {
+                        selectedLanguage = newLanguage;
+                      });
+                    }
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -215,7 +211,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
                   ],
                 ),
                 const SizedBox(height: 15),
-            
+
                 // --- SECONDARY EDUCATION ---
                 /*_buildSectionHeader(
                   "Secondary Education",
@@ -245,7 +241,7 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
                   ],
                 ),
                 const SizedBox(height: 15),
-            
+
                 // --- PRIMARY EDUCATION ---
                 /*_buildSectionHeader(
                   "Primary Education",
@@ -347,24 +343,20 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
             ),
           ],
           border: Border.all(
-            color: accentGold.withOpacity(0.3), // Subtle gold border
+            color: primaryBlue.withOpacity(0.3), // Subtle gold border
             width: 1,
           ),
         ),
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(14),
+              padding: EdgeInsets.all(14),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [accentGold, Color(0xFFFFB020)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
+                color: primaryBlue,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                    color: accentGold.withOpacity(0.4),
+                    color: primaryBlue.withOpacity(0.4),
                     blurRadius: 8,
                     offset: const Offset(0, 3),
                   ),
@@ -419,11 +411,15 @@ class _GradeSelectionScreenState extends State<GradeSelectionScreen> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: primaryBlue.withOpacity(0.06),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
+              color: primaryBlue.withOpacity(0.08),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
             ),
           ],
+          border: Border.all(
+            color: primaryBlue.withOpacity(0.3), // Subtle gold border
+            width: 1,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),

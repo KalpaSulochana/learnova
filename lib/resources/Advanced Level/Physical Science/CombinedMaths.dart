@@ -31,7 +31,7 @@ class AlCombinedMaths extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10),
-      
+
               // Unit Titles
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -47,7 +47,7 @@ class AlCombinedMaths extends StatelessWidget {
                         height: 1.2,
                       ),
                     ),
-      
+
                     Text(
                       'All resources',
                       style: TextStyle(
@@ -59,9 +59,9 @@ class AlCombinedMaths extends StatelessWidget {
                   ],
                 ),
               ),
-      
+
               const SizedBox(height: 5),
-      
+
               // Tab Bar
               TabBar(
                 isScrollable: true,
@@ -82,11 +82,10 @@ class AlCombinedMaths extends StatelessWidget {
                 dividerColor: Colors.transparent,
                 tabs: const [
                   Tab(text: 'Past Papers'),
-                  Tab(text: 'Notes'),
                   Tab(text: 'Marking Schemes'),
                 ],
               ),
-      
+
               // Tab Views
               Expanded(
                 child: TabBarView(
@@ -107,7 +106,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                          icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2025 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -129,7 +128,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                         icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2024 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -140,7 +139,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                 icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2023 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -151,7 +150,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                         icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2022 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -162,7 +161,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                          icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2021 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -173,7 +172,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                        icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2020 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -184,7 +183,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                         icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2019 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -195,7 +194,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                        icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2018 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -228,7 +227,7 @@ class AlCombinedMaths extends StatelessWidget {
                           ),
 
                           buildCommonCard(
-                          icon: Icons.picture_as_pdf_outlined,
+                            icon: Icons.picture_as_pdf_outlined,
                             title: "2015 A/L",
                             subtitle: "full paper",
                             toPage: PdfViewerPage(
@@ -237,20 +236,121 @@ class AlCombinedMaths extends StatelessWidget {
                                   "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/past%20papers/gce-advance-level-exam-2015-combined-mathematics-past-papers-61c2b52d2324e.pdf",
                             ),
                           ),
-                          
-                         //drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
-                          
+
+                          //drive.google.com/file/d/1c59cQlvOChIFcrr3A9x5LrtmchbnVOTi/view?usp=sharing",
                         ],
                       ),
                     ),
-                    Center(
-                      child: Text(
-                        'Notes Content',
-                        style: TextStyle(color: textDark, fontSize: 16),
-                      ),
-                    ),
+
+                    //marking schemes
+
+
                     SingleChildScrollView(
-                      child: Column(children: [SizedBox(height: 10)]),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2025 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2025CMmarking.pdf",
+                              title: "2025 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2024 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2024CMmarkingS.pdf",
+                              title: "2024 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2023 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/20232024-AL-Combined-Maths-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2023 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2022 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/20222023-AL-Combined-Mathematics-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2022 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2021 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2021-AL-Combined-Maths-Marking-Scheme-Sinhala-Medium.pdf",
+                              title: "2021 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2020 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2020-AL-Combined-Mathematics-Marking-Scheme-%E2%80%93-Sinhala-Medium.pdf",
+                              title: "2020 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2019 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2019CMMarking.pdf",
+                              title: "2019 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2017 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2017-answers.pdf",
+                              title: "2017 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2016 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2016-answers.pdf",
+                              title: "2016 A/L CM Marking Scheme",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.picture_as_pdf_outlined,
+                            title: "2015 A/L",
+                            subtitle: "Marking Scheme",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/combineed%20Math/Markings/2015-answers.pdf",
+                              title: "2015 A/L CM Marking Scheme",
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

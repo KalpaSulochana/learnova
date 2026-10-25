@@ -83,7 +83,7 @@ class AlPhysics extends StatelessWidget {
                 tabs: const [
                   Tab(text: 'Past Papers'),
                   Tab(text: 'Resource Books'),
-                  Tab(text: 'Marking Schemes'),
+                  Tab(text: 'Short Notes'),
                 ],
               ),
 
@@ -92,6 +92,10 @@ class AlPhysics extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     SingleChildScrollView(
+
+                      // past papers
+
+
                       child: Column(
                         children: [
                           SizedBox(height: 10),
@@ -230,10 +234,22 @@ class AlPhysics extends StatelessWidget {
                       ),
                     ),
 
+                    //resource books
+
                     SingleChildScrollView(
                       child: Column(
                         children: [
                           SizedBox(height: 10),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Practical Book",
+                            subtitle: "All Practicals",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/resource%20books/sALOM%20Physics%20-%20Practical%20HandBook.pdf",
+                              title: "Practical Hand Book",
+                            ),
+                          ),
                           buildCommonCard(
                             icon: Icons.auto_stories_sharp,
                             title: "Unit 1/2",
@@ -304,21 +320,114 @@ class AlPhysics extends StatelessWidget {
                               title: "Matter and Radiation",
                             ),
                           ),
-                          buildCommonCard(
-                            icon: Icons.auto_stories_sharp,
-                            title: "Practical Book",
-                            subtitle: "All Practicals",
-                            toPage: PdfViewerPage(
-                              pdfUrl:
-                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/resource%20books/sALOM%20Physics%20-%20Practical%20HandBook.pdf",
-                              title: "Practical Hand Book",
-                            ),
-                          ),
+                          
                         ],
                       ),
                     ),
+
+                    //notes
+
+
                     SingleChildScrollView(
-                      child: Column(children: [SizedBox(height: 10)]),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Measurements",
+                            subtitle: "Unit 1",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/minum.pdf",
+                              title: "Unit 1- Measurements",
+                            ),
+                          ),
+                          
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Mechanics",
+                            subtitle: "Unit 2",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/yantraWidyawa.pdf",
+                              title: "Unit 2- Mechanics",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Oscillations and Waves",
+                            subtitle: "Unit 3",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/dolanatharanga.pdf",
+                              title: "Unit 3- Oscillations and Waves",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Thermal Physics",
+                            subtitle: "Unit 4",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/thapaya.pdf",
+                              title: "Unit 4- Thermal Physics",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Fields",
+                            subtitle: "Unit 5/6/7",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/fields.pdf",
+                              title: "Unit 5/6/7- Fields",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Current Electricity",
+                            subtitle: "Unit 8",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/electricity.pdf",
+                              title: "Unit 8- Current Electricity",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Electronics ",
+                            subtitle: "Unit 9",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/electronics.pdf",
+                              title: "Unit 9- Electronics ",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Mechanical Properties of Matter",
+                            subtitle: "Unit 10",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/propertiessOfMatters.pdf",
+                              title: "Unit 10- Mechanical Properties of Matter",
+                            ),
+                          ),
+                          buildCommonCard(
+                            icon: Icons.auto_stories_sharp,
+                            title: "Matter and Radiation",
+                            subtitle: "Unit 11",
+                            toPage: PdfViewerPage(
+                              pdfUrl:
+                                  "https://pub-443fa50336f24320a9b73edc71de97e6.r2.dev/AL/Physical%20Science/physics/notes/radiation.pdf",
+                              title: "Unit 11- Matter and Radiation",
+                            ),
+                          ),
+                          
+                          
+                      
+                      
+                      ]),
                     ),
                   ],
                 ),
